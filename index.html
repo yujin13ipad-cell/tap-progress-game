@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タップゲーム - 30タップで100%</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ゲーム画面 -->
+    <div id="gameScreen" class="screen active">
+        <div class="container">
+            <h1>⚡ TAP GAME ⚡</h1>
+            <div class="tap-area" id="tapArea">
+                <div class="tap-text">TAP</div>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="tapCount">0</span> / 30
+                </div>
+                <div class="percentage" id="percentage">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 雷マーク画面 -->
+    <div id="resultScreen" class="screen">
+        <div class="container result-container">
+            <div class="lightning-animation">
+                <div class="lightning">⚡</div>
+            </div>
+            <h1>完成！</h1>
+            <div class="result-info">
+                <p>タップ数: <span id="finalTapCount">30</span></p>
+                <p>クリア時間: <span id="clearTime">0</span>秒</p>
+            </div>
+            <div class="button-group">
+                <button id="saveBtn" class="btn btn-primary">ゲーム結果を保存</button>
+                <button id="retryBtn" class="btn btn-secondary">もう一度遊ぶ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 保存完了画面 -->
+    <div id="saveScreen" class="screen">
+        <div class="container">
+            <div class="checkmark">✓</div>
+            <h1>保存完了！</h1>
+            <p>ゲーム結果を保存しました</p>
+            <button id="backBtn" class="btn btn-primary">戻る</button>
+        </div>
+    </div>
+
+    <!-- 保存履歴表示 -->
+    <div id="historyBtn" class="history-btn">📊</div>
+    <div id="historyPanel" class="history-panel">
+        <div class="history-header">
+            <h2>ゲーム履歴</h2>
+            <button id="closeHistoryBtn" class="close-btn">✕</button>
+        </div>
+        <div id="historyList" class="history-list">
+            <p class="empty-message">まだ履歴がありません</p>
+        </div>
+        <button id="clearHistoryBtn" class="btn btn-danger">履歴をクリア</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
